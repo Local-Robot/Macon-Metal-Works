@@ -1,0 +1,1061 @@
+/* Reset some basic styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Lato', sans-serif;
+}
+
+/* Body and Container Styles */
+body {
+    background-color: #f0f0f0;
+    color: #333;
+    font-family: 'Lato', sans-serif;
+    overflow-x: hidden;
+}
+
+h2 {
+    font-size: 50px;
+    font-family: "Cabin", sans-serif;
+}
+
+/* Header */
+
+/* Smooth Scrolling */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Default Header */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 15px;
+    background-color: #fff;
+    color: #333;
+    height: 80px; /* Set a specific height for the navbar */
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: height 0.3s ease, padding 0.3s ease; /* Smooth transition */
+}
+
+.header-buttons {
+    display: none;
+    }
+
+.call-btn {
+    display: flex;
+    background-color: #D4EFFF;
+    align-items: center;
+    gap: 5px;
+    color: #002855;
+    text-decoration: none;
+    border: 1px solid #002855;
+    padding: 10px 20px;
+    border-radius: 20px;
+}
+
+.call-btn:hover {
+    background-color: #4A85E2;
+    color: #fff;
+}
+
+.call-btn:hover img {
+    filter: invert(100%) sepia(100%) saturate(0%) hue-rotate(237deg) brightness(103%) contrast(101%);
+}
+
+.header-cta-btn {
+    background-color: #4A85E2;
+    color: #fff;
+    border-style: solid;
+    border-color:#4A85E2;
+    padding: 10px 20px;
+    border-radius: 100px;
+    cursor: pointer;
+    font-size: 16px;
+    font-family: "Cabin", sans-serif;
+}
+
+.header-cta-btn:hover {
+    background-color: #fff;
+    color: #002855;
+    border-style: solid;
+    border-color:#002855;
+    padding: 10px 20px;
+    border-radius: 100px;
+    cursor: pointer;
+    font-size: 16px;
+    font-family: "Cabin", sans-serif;
+}
+
+/* Logo Header */
+.logo-header {
+    display: flex;
+    flex-grow: 1;
+    justify-content: center;
+    align-items: center;
+    padding-top: 4px;
+}
+
+.logo-header img {
+    max-width: 250px;
+    height: auto;
+    z-index: 999;
+}
+
+.logo-header span {
+    font-family: 'Lato', sans-serif;
+    font-weight: 700;
+    font-size: 24px;
+    display: none; /* Fallback text */
+}
+
+/* Navigation Links */
+.desktop-nav {
+    display: none; /* Hidden by default, shown on larger screens */
+}
+
+.desktop-nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+.desktop-nav a {
+    color: #002855;
+    text-decoration: none;
+    font-size: 16px;
+}
+
+.desktop-nav a:hover {
+    color: #002855;
+    text-decoration: none;
+    border-bottom: 1.5px solid #002855;
+    padding-bottom: 4px;
+    transition: ease, border 0.2s ease; /* Smooth transition */
+    font-size: 16px;
+}
+
+/* Mobile Navigation */
+.mobile-nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: #fff;
+    transform: translateX(-100%);
+    transition: transform 0.3s ease-in-out;
+    z-index: 998;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    overflow-x: hidden;
+}
+
+.mobile-nav ul {
+    list-style: none;
+    text-align: left;
+    gap: 30px; /* Add space between items */
+}
+
+.mobile-nav li {
+    padding: 20px 0; /* Additional padding to control spacing */
+}
+
+.mobile-nav a {
+    font-size: 50px;
+    color: #002855;
+    text-decoration: none;
+    margin: 30px 0;
+    font-family: "Permanent Marker", cursive;
+}
+
+/* Mobile Menu Button */
+.menu-btn {
+    background: none;
+    border: none;
+    color: #333;
+    font-size: 40px;
+    display: block;
+    align-items: center;
+}
+
+/* Close Button for Mobile Nav */
+.close-btn {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: none;
+    border: none;
+    font-size: 40px;
+    color:#002855
+}
+
+/* Hero Section */
+.hero {
+    position: relative;
+    text-align: center;
+    color: #fff;
+    background: #000;
+    height: calc(100vh - 80px); /* Full viewport height minus the navbar height */
+    overflow: hidden; /* Ensure content stays within bounds */
+    transition: height 0.3s ease; /* Add transition for height */
+}
+
+.hero-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 1;
+}
+
+.hero-content {
+    position: absolute;
+    top: 45%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    padding: 0 20px;
+    z-index: 2;
+}   
+
+.hero::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to top,
+    rgba(8, 43, 96, 1) 0%,
+    rgba(8, 43, 96, 0) 100%);
+    z-index: 1;
+}
+
+.hero-content h1 {
+    font-size: 50px;
+    margin-bottom: 30px;
+    font-family: "Permanent Marker", cursive;
+    text-shadow: 0px 10px 10px rgba(0, 0, 0, 0.25);
+}
+
+/* CTA Button */
+.cta-btn {
+    background-color: #4A85E2;
+    color: #fff;
+    border-style: solid;
+    border-color:#4A85E2;
+    border-radius: 100px;
+    padding: 16px 30px;
+    cursor: pointer;
+    font-size: 20px;
+    font-family: "Cabin", sans-serif;
+}
+
+/* Scroll Indicator */
+.scroll-indicator {
+    position: absolute;
+    bottom: 100px;   
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1;
+}
+
+.line {
+    width: 130px;
+    height: 1px;
+    background: linear-gradient(to right, rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 0.5) 50%,
+    rgba(255, 255, 255, 0)) 100%;
+}
+
+.arrow {
+    font-size: 24px;
+    color: #ffffff;
+    margin: 0 15px;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Content Section */
+.content-section {
+    display: grid;
+    gap: 20px;
+    padding: 20px 30px 75px;
+    background: linear-gradient(to bottom,
+    rgba(8, 43, 96, 1) 30%,
+    rgba(8, 43, 96, 1) 30%,
+    rgba(139, 208, 255, 1) 90%,
+    rgba(139, 208, 255, 0) 100%);
+    color: white;
+    overflow: hidden;
+}
+
+.content-section h2 {
+    font-size: 30px;
+    color: #8BD0FF;
+    margin-bottom: 12px;
+    text-shadow: -1px 1px 3px #092a63;
+
+}
+
+.content-section p {
+    font-weight: 400;
+    font-family: "Lato", sans-serif;
+}
+
+.content-section img {
+    display: none;
+}
+
+/* Horizontal Line Style */
+.content-text hr {
+    border: none;
+    height: 2px;
+    background: linear-gradient(to right,
+    rgba(139, 208, 255, 1) 0%,
+    rgba(0,0,0,0) 100%);
+    margin: 20px 0; /* Space around the line */
+}
+
+/* Gallery Section */
+
+.our-work-section h2 {
+    font-size: 40px;
+    font-weight: 700;
+    color: #082B60;
+    font-family: "Cabin", sans-serif;
+    text-align: center;
+    margin: 30px;
+}
+
+.elfsight-app-5d08d64a-c3ba-4044-b6cb-f079ff29ff93 {
+    margin: 20px;
+    align-items: center;
+}
+
+.eapp-photo-gallery-photo-gallery-loadMore {
+    border-radius: 100px;
+    font-family: "Cabin", sans-serif;
+}
+
+/* Testimonials Section */
+
+.testimonials-section {
+    background: linear-gradient(to top,
+    rgba(8, 43, 96, 1) 0%,
+    rgba(139, 208, 255, 1) 80%,
+    rgba(139, 208, 255, 0) 100%);
+    color: white;
+    overflow: hidden;
+    height: 600px;
+}
+
+.testimonials-section h2 {
+    font-size: 40px;
+    font-weight: 700;
+    color: #082B60;
+    font-family: "Cabin", sans-serif;
+    text-align: center;
+    margin: 30px 30px 00px 30px;
+}
+
+.testimonials-section p {
+    font-size: 40px;
+    font-weight: 700;
+    color: #FFF;
+    font-family: "Cabin", sans-serif;
+    text-align: center;
+    margin: 00px 30px 30px 30px;
+}
+
+/* YotPo Reviews Styling */
+
+.reviews-container {
+    display: none;
+    grid-template-columns: 1fr; /* One review per row */
+    grid-gap: 20px;
+    padding: 20px;
+    width: 100%;
+    justify-items: center;
+}
+
+/* Review Card Styling */
+
+.review-card {
+    background-color: #2b4d7f;
+    color: white;
+    border: 2px solid white;
+    border-radius: 20px;
+    width: 80%; /* Slightly reduced width for centering */
+    height: 300px !important;
+    max-width: 350px; /* Set a maximum width for larger screens */
+    margin: 0 auto; /* Center the card within the slide */
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    text-align: center;
+}
+
+.review-card h3 {
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+
+.review-card p {
+    font-size: 14px;
+    margin-bottom: 10px;
+    font-weight: 400;
+}
+
+.review-card .username {
+    font-size: 14px;
+    font-weight: bold;
+    color: #8bd0ff;
+}
+
+.review-card .stars {
+    font-size: 16px;
+    margin-bottom: 10px;
+    color: #FFAC33;
+}
+
+/* Swiper Container */
+
+.swiper-container {
+    width: 100%; /* Ensure the swiper takes full width */
+    height: auto; /* Allow the height to adjust based on content */
+    padding: 0 20px; /* Remove any padding to avoid content shifting */
+}
+
+.swiper-wrapper {
+    display: flex;
+    align-items: center;
+}
+
+.swiper-slide {
+    display: flex;
+    justify-content: center; /* Center content within each slide */
+    align-items: center;
+    box-sizing: border-box;
+    padding: 20px; /* Add padding for visual spacing */
+    text-align: center; /* Center text inside the slide */
+}
+
+/* Form Section */
+
+.contact-container {
+    display: flex;
+    flex-direction: column; /* Stack items on mobile */
+    gap: 20px;
+}
+
+.form-section {
+    display: block;
+    width: 100%;
+    padding: 25px;
+    box-sizing: border-box;
+}
+.get-quote {
+    order: 1;
+}
+.contact-info {
+    order: 2;
+}
+
+/* Contact Info Section */
+.contact-info {
+    font-family: 'Lato', sans-serif;
+    color: #002855;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.contact-info h3 {
+    font-size: 34px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.contact-info p {
+    font-size: 16px;
+    line-height: 1.5;
+    margin-bottom: 20px;
+}
+
+/* Opening Hours */
+.opening-hours {
+    display: flex;
+    justify-content: center;
+    text-align: left;
+    gap: 50px
+}
+
+.opening-hours div p {
+    margin: 0;
+    line-height: 1.8;
+}
+
+/* Get a Free Quote Form */
+.get-quote h2 {
+    font-size: 40px;
+    font-weight: 700;
+    color: #082B60;
+    font-family: "Cabin", sans-serif;
+    text-align: center;
+    margin-bottom: 10px;
+}   
+
+.get-quote p {
+    font-size: 14px;
+    color: #082B60;
+    font-family: "Cabin", sans-serif;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.get-quote form {
+    display: flex;
+    flex-direction: column;
+}
+
+.get-quote input, .get-quote textarea {
+    width: 100%; /* Make inputs take full width */
+    margin: 10px 0;
+    padding: 10px;
+    font-size: 16px;
+    box-sizing: border-box; /* Include padding in the element's width */
+    margin: 10px 0;
+}
+
+.get-quote textarea {
+    height: 160px;
+}
+
+.get-quote button {
+    background-color: #4A85E2;
+    color: #fff;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    margin-top: 10px;
+    border-radius: 100px;
+    font-size: 20px;
+}
+
+.checkbox {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.checkbox input {
+    height: 30px;
+    width: 30px;
+    margin-right: 20px;
+    margin-left: 20px;
+    justify-content: center;
+    align-items: center;
+}
+
+.file-upload {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.file-upload span {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: 60px;
+}
+
+/* Footer */
+.footer {
+    background-color: #002855; /* Dark blue background */
+    color: #fff;
+    padding: 40px 40px;
+    display: block;
+    justify-content: space-around; /* Space between sections */
+    align-items: flex-start; /* Align sections at the top */
+    flex-wrap: wrap; /* Wrap to a new line on small screens */
+    text-align: center;
+}
+
+.footer-section {
+    flex: 1;
+    margin: 0 20px;
+}
+
+.footer-section.left {
+    margin-bottom: 30px;
+}
+
+.footer-section.left h3 {
+    font-family: 'Lato', sans-serif; /* Use Lato for logo text */
+    margin-bottom: 10px;
+}
+
+.footer-section.left p {
+    font-size: 16px;
+}
+
+/* Logo Footer */
+.logo-footer {
+    display: flex;
+    flex-grow: 1;
+    justify-content: center;
+    align-items: center;
+}
+
+.logo-footer img {
+    max-width: 250px;
+    height: auto;
+    margin-bottom: 15px;
+}
+
+.logo-footer span {
+    font-family: 'Lato', sans-serif;
+    font-weight: 700;
+    font-size: 24px;
+    display: none; /* Fallback text */
+}
+.footer-section.center {
+    margin-bottom: 30px;
+}
+
+.footer-section.center ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-section.center ul li {
+    margin-bottom: 10px;
+}
+
+.footer-section.center ul li a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.footer-section.right h2 {
+    font-family: 'Lato', sans-serif; /* Use Lato for logo text */
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+
+.footer-section.right .social-icons {
+    display: flex;
+    margin-bottom: 20px;
+    padding: 0px 50px 0px 50px;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.footer-section.right .social-icons a {
+    color: #fff;
+    font-size: 24px;
+    text-decoration: none;
+    margin: 10px auto;
+}
+
+.footer-section.right .social-icons img {
+    height: 30px;
+}
+
+.footer-section.right .subscription-form {
+    display: flex;
+}
+
+.footer-section.right .subscription-form input {
+    padding: 10px;
+    border: none;
+    border-radius: 20px 0 0 20px;
+    outline: none;
+    flex: 1;
+}
+
+.footer-section.right .subscription-form button {
+    background-color: #4A85E2;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 0 20px 20px 0;
+    cursor: pointer;
+}
+
+/* Footer Bottom Section */
+.footer-bottom {
+    width: 100%;
+    margin-top: 20px;
+    text-align: center;
+}
+
+.footer-bottom hr {
+    border: 0.5px solid #fff;
+    margin-bottom: 20px;
+}
+
+.footer-bottom p {
+    font-size: 14px;
+}
+
+.footer-bottom a {
+    color: #FFF;
+    text-decoration: underline;
+}
+
+/* Privacy Policy Styling*/
+
+.privacy-policy {
+    padding: 20px 10px; /* Padding for mobile */
+    line-height: 1.6; /* Improve readability */
+    color: #333; /* Text color */
+    background-color: #fff; /* Background color for better readability */
+    border-radius: 8px; /* Rounded corners for a clean look */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+}
+
+.privacy-policy h1 {
+    font-size: 50px; /* Smaller font size for mobile */
+    font-family: "Cabin", sans-serif; /* Heading font */
+    color: #082B60; /* Dark blue for headings */
+    text-align: center; /* Center the main heading */
+    margin-bottom: 20px; /* Margin between heading and content */
+}
+
+.privacy-policy h2 {
+    font-size: 20px; /* Subheading font size */
+    font-family: "Cabin", sans-serif;
+    color: #002855; /* Dark blue for subheadings */
+    margin-top: 10px; /* Margin before subheading */
+    margin-bottom: 15px; /* Margin after subheading */
+}
+
+.privacy-policy p {
+    font-size: 14px; /* Smaller text for mobile */
+    font-family: "Lato", sans-serif;
+    margin-bottom: 15px; /* Space between paragraphs */
+}
+
+.privacy-policy ul {
+    list-style-type: disc; /* Bullets for lists */
+    padding-left: 20px; /* Indent list items */
+    margin-bottom: 15px; /* Margin below lists */
+}
+
+.privacy-policy ul li {
+    margin-bottom: 10px; /* Space between list items */
+}
+
+.privacy-policy a {
+    color: #4A85E2; /* Link color */
+    text-decoration: underline; /* Underline links */
+}
+
+.privacy-policy a:hover {
+    color: #002855; /* Darken link color on hover */
+    text-decoration: none; /* Remove underline on hover */
+}
+
+/* Responsive Styles */
+
+/* Tablet View */
+
+@media (min-width: 768px) and (max-width: 1199px) {
+    .testimonials-section {
+        height: 900px;
+    }
+    
+    .reviews-container {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr); /* Show 2 reviews in one row */
+        grid-gap: 20px;
+        justify-items: center;
+    }
+
+    .swiper-container {
+        display: none;
+    }
+
+    .privacy-policy {
+        padding: 30px 20px; /* Increase padding for larger screens */
+    }
+
+    .privacy-policy h1 {
+        font-size: 50px; /* Larger heading for tablet/desktop */
+    }
+
+    .privacy-policy h2 {
+        font-size: 24px; /* Larger subheading for tablet/desktop */
+    }
+
+    .privacy-policy p {
+        font-size: 16px; /* Larger text for better readability on larger screens */
+    }
+}
+
+/* Desktop View */
+
+@media (min-width: 1200px) {
+    .desktop-nav {
+        display: block;
+    }
+
+    .menu-btn,
+    .mobile-nav {
+        display: none;
+    }   
+
+    /* Header */
+    .header {
+        padding: 20px 50px;
+    }
+
+    .header.scrolled {
+        height: 60px; /* Reduced height on scroll */
+        padding: 10px 50px; /* Reduced padding */
+    }
+
+    /* Header Buttons */
+    .header-buttons {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+    }
+
+    .logo-header img {
+        margin-left: -60px;
+    }
+
+    .hero {
+        position: relative;
+        color: #fff;
+        background: #000;
+        height: calc(100vh - 80px); /* Full viewport height minus the navbar height */
+        overflow: hidden; /* Ensure content stays within bounds */
+        transition: height 0.3s ease; /* Add transition for height */
+    }
+
+    /* Hero Section */
+    .hero {
+        height: calc(100vh - 80px); /* Adjust for tablet view */
+        transition: height 0.3s ease; /* Add transition for height */
+    }
+
+    .hero-content h1 {
+        font-size: 70px;
+        text-shadow: 0px 10px 10px rgba(0, 0, 0, 0.25);
+    }
+
+    .scroll-indicator {
+        bottom: 30px;
+    }
+
+    .line {
+        width: 500px;
+        height: 1px;
+        background: linear-gradient(to right, rgba(255, 255, 255, 0) 0%,
+        rgba(255, 255, 255, 0.5) 50%,
+        rgba(255, 255, 255, 0)) 100%;
+    }
+
+    .cta-btn {
+        background-color: #4A85E2;
+        color: #fff;
+        border-style: solid;
+        border-color:#4A85E2;
+        border-radius: 100px;
+        padding: 16px 30px;
+        cursor: pointer;
+        font-size: 20px;
+        font-family: "Cabin", sans-serif;
+        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    }
+
+    .cta-btn:hover {
+        background-color: #fff;
+        color: #002855;
+        border-style: solid;
+        border-color:#002855;
+        padding: 16px 30px;
+        border-radius: 100px;
+        cursor: pointer;
+        font-size: 20px;
+        font-family: "Cabin", sans-serif;
+    }
+
+    /* Content Sections - Two-Column Layout */
+    
+    .content-section {
+        grid-template-columns: 1.5fr 2fr; /* Two columns: image + content */
+    }
+
+    .content-img {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .content-img img {
+        display: flex;
+        max-width: 100%;
+        border-radius: 10px;
+    }
+
+    .content-section .content-text {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding: 20px;
+    }
+
+    .elfsight-app-5d08d64a-c3ba-4044-b6cb-f079ff29ff93 {
+        margin: 60px;
+    }
+
+    /* Reviews Styling */
+
+    .reviews-container {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr); /* Show 4 reviews in one row */
+        grid-gap: 20px;
+        justify-items: center;
+    }
+
+    .review-card {
+        width: 300px; /* Fixed width for each card on desktop */
+        height: 300px; /* Optional: Set a fixed height for uniformity */
+    }
+
+    .swiper-container {
+        display: none;
+    }
+
+    /* Form Section */
+
+    .contact-container {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: flex-start;
+    }
+    .get-quote {
+        order: 2;
+        flex: 1;
+    }
+
+    .get-quote {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .get-quote form {
+        display: flex;
+        flex-direction: column;
+        align-items: center; /* Center all form inputs */
+        justify-content: center;
+        width: 100%; /* Set form width */
+        max-width: 500px; /* Set a max width for the form to prevent it from stretching too much */
+    }
+
+    .get-quote button {
+        padding: 10px 30px;
+    }
+
+    .file-upload {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        width: 100%;
+        margin: 10px 0;
+    }
+
+    .file-upload span {
+        display: inline-block;
+        width: 80px;
+    }
+
+    .checkbox {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        width: 100%;
+    }
+
+    .checkbox input {
+        height: 20px;
+        width: 20px;
+        margin-left: 10px;
+    }
+
+    .contact-container {
+        padding-top: 20px;
+    }
+
+    .contact-info {
+        order: 1;
+        flex: 1;
+        padding-top: 50px;
+    }
+
+    /* Opening Hours */
+    .opening-hours {
+        display: flex;
+        gap: 50px;
+    }
+
+    /* Footer */
+    .footer {
+        padding: 40px 60px;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .footer-content {
+        max-width: 30%;
+    } 
+
+    .footer-section.right .social-icons {
+        display: flex;
+        justify-content: center; /* Center the icons */
+        gap: 8px; /* Adjust the gap between the icons */
+        padding: 0; /* Remove extra padding */
+    }
+    
+    .footer-section.right .social-icons a {
+        margin: 0 5px; /* Control the spacing between the icons */
+    }
+
+    .privacy-policy {
+        max-width: 1200px; /* Limit the width on large screens */
+        margin: 0 auto; /* Center content on desktop */
+        padding: 40px 30px; /* More padding for desktop */
+    }
+
+    .privacy-policy h1 {
+        margin-bottom: 50px; /* Increase margin below the main heading */
+    }
+
+    .privacy-policy h2 {
+        margin-top: 20px; /* Space above subheadings */
+        margin-bottom: 10px; /* Space below subheadings */
+    }
+
+    .privacy-policy p {
+        margin-bottom: 20px; /* Space between paragraphs */
+    }
+    
+}
